@@ -18,12 +18,11 @@ class DBManager:
     def add_user(self, username, password, api_key):
         session = self.Session()
         user_id = str(uuid.uuid4())
-        user = User(id=user_id,username=username, password=password)
+        user = User(id=user_id, username=username, password=password)
         api_creds = ApiCreds(id=user_id, api_key=api_key)
         session.add(user)
         session.add(api_creds)
         session.commit()
-
 
     def get_user(self, username):
         session = self.Session()
@@ -34,7 +33,7 @@ class DBManager:
             print(f"User '{username}' not found.")
             return None
 
-     # def delete_user(self, user_id):
-     #     session = self.Session()
-     #     self.user_id = user_id
-     #     session.query(User).filter_by(id=self.user_id).delete()
+    # def delete_user(self, user_id):
+    #     session = self.Session()
+    #     self.user_id = user_id
+    #     session.query(User).filter_by(id=self.user_id).delete()
