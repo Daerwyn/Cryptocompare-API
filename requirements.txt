@@ -1,0 +1,6 @@
+attrs
+requests
+sqlalchemy
+deepdiff
+pytest
+selene
