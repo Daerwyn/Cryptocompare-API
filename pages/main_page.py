@@ -1,0 +1,9 @@
+from pages.base_page import BasePage
+from selenium.webdriver.common.by import By
+
+
+class MainPage(BasePage):
+
+    def go_to_login_page(self):
+        login_link = self.driver.find_element(By.CSS_SELECTOR, 'a[href*="login"]')
+        login_link.click()
