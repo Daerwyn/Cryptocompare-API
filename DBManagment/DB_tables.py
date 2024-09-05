@@ -6,10 +6,7 @@ from sqlalchemy.orm import relationship, sessionmaker
 
 DB_url = 'mysql+mysqlconnector://root:12344321@127.0.0.1:3307/Cryptocompare'
 engine = create_engine(DB_url, echo=True)
-Session = sessionmaker(bind=engine)
-Base = declarative_base(
-
-)
+Base = declarative_base()
 
 
 class User(Base):

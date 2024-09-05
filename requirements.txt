@@ -4,3 +4,4 @@ sqlalchemy
 deepdiff
 pytest
 selene
+selenium
