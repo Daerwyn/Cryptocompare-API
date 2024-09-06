@@ -32,13 +32,13 @@ def pytest_addoption(parser):
 
 
 @pytest.fixture()
-def browser(request):
+def driver(request):
     user_language = request.config.getoption("language")
 
     options = Options()
     options.add_experimental_option('prefs', {'intl.accept_languages': user_language})
     options.add_argument('--start-maximized')
-    browser = webdriver.Chrome(options=options)
+    driver = webdriver.Chrome(options=options)
 
-    yield browser
-    browser.quit()
+    yield driver
+    driver.quit()
