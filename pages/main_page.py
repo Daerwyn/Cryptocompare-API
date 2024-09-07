@@ -16,14 +16,15 @@ class MainPage(BasePage):
         assert self.is_element_displayed(*LoginModalLocators.EMAIL_INPUT), "E-mail input is not present."
         assert self.is_element_displayed(*LoginModalLocators.PASSWORD_INPUT), "Password input is not present."
 
-    def login(self, user, password, user_name):
+    def login(self, user, password):
         email_input = self.driver.find_element(*LoginModalLocators.EMAIL_INPUT)
         password_input = self.driver.find_element(*LoginModalLocators.PASSWORD_INPUT)
         email_input.send_keys(user)
         password_input.send_keys(password)
         self.driver.find_element(*LoginModalLocators.LOGIN_BUTTON).click()
         self.is_element_displayed(*CommonLocators.USER_MENU)
-        assert self.driver.find_element(*CommonLocators.USER_MENU).text == user_name, "Username is not displayed"
+        assert self.driver.find_element(*CommonLocators.USER_MENU).text == user.split("@")[
+            0], "Username is not displayed"
 
     def open_api_keys_page(self):
         user_menu_button = self.driver.find_element(*CommonLocators.USER_MENU)

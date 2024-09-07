@@ -20,7 +20,7 @@ class TestUserCanGetApi():
         page.open()
         page.main_page_opened()
         page.go_to_login_page()
-        page.login(get_creds_from_db.email, get_creds_from_db.password, get_creds_from_db.email.split("@")[0])
+        page.login(get_creds_from_db.email, get_creds_from_db.password)
 
     def test_api_key_value(self, driver, get_creds_from_db):
         """
@@ -29,7 +29,8 @@ class TestUserCanGetApi():
         3. Click on the API key button
         4. Check that the form with API keys is visible
         5. Check that the input box with API key is visible
-        6. Check that the API key in the box matches the one in DB
+        6. Check that common API key type is "password"
+        7. Check that the API key in the box matches the one in DB
         """
         page = MainPage(driver, driver.current_url)
         page.open_api_keys_page()

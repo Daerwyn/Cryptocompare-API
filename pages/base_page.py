@@ -35,3 +35,7 @@ class BasePage():
             return False
 
         return True
+
+    # def navigate_to(self, what):
+    #     WebDriverWait(self.driver, 30, 0.3).until(EC.element_to_be_clickable((By.XPATH, what)))
+    #     self.driver.find_element(By.XPATH, what).click()
