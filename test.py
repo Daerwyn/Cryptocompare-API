@@ -3,7 +3,7 @@ from pages.api_key_page import ApiKeyPage
 from pages.main_page import MainPage
 
 
-class TestUserCanLogin():
+class TestUserCanGetApi():
     def test_login(self, driver, get_creds_from_db):
         """
         1. Go to the main page

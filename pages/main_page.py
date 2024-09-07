@@ -23,7 +23,7 @@ class MainPage(BasePage):
         password_input.send_keys(password)
         self.driver.find_element(*LoginModalLocators.LOGIN_BUTTON).click()
         self.is_element_displayed(*CommonLocators.USER_MENU)
-        assert self.driver.find_element(*CommonLocators.USER_MENU).text == user_name, "Not user"
+        assert self.driver.find_element(*CommonLocators.USER_MENU).text == user_name, "Username is not displayed"
 
     def open_api_keys_page(self):
         user_menu_button = self.driver.find_element(*CommonLocators.USER_MENU)
