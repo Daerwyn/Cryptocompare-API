@@ -33,7 +33,12 @@ class DBManager:
             print(f"User '{username}' not found.")
             return None
 
-    # def delete_user(self, user_id):
-    #     session = self.Session()
-    #     self.user_id = user_id
-    #     session.query(User).filter_by(id=self.user_id).delete()
+    def get_api_key(self, user):
+        session = self.Session()
+        id = self.get_user(user).id
+        api_key = session.query(ApiCreds).filter_by(id=id).first()
+        if api_key:
+            return api_key
+        else:
+            print(f"User '{user}' not found.")
+            return None

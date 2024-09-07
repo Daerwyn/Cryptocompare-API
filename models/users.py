@@ -5,3 +5,4 @@ from attr import attrib, attrs
 class User:
     password = attrib()
     email = attrib()
+    api_key = attrib()
